@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orkestra"
+version = "0.1.0"
+description = "Local terminal orchestrator for development agents"
+requires-python = ">=3.11"
+dependencies = ["textual>=1.0,<9"]
+
+[project.scripts]
+orkestra = "orkestra.app:main"
+
+[tool.setuptools.packages.find]
+include = ["orkestra*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23"]
